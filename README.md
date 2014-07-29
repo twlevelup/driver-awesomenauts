@@ -48,5 +48,6 @@ _note: any commands run on the command line are prefixed with `$ ` - you won't n
 
 
 ### Developers
-Mary
-Michael
+- Mary
+- Michael
+- Charles
