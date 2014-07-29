@@ -1,5 +1,5 @@
 class Driver
     def honk
-        'honk honk'
+        'honk honk toot toot beep beep'
     end
 end
