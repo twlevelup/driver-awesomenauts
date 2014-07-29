@@ -45,3 +45,7 @@ _note: any commands run on the command line are prefixed with `$ ` - you won't n
 
 ### Run the build
 1. `$ bundle exec rake`
+
+
+### Developers
+Mary
