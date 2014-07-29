@@ -48,6 +48,11 @@ _note: any commands run on the command line are prefixed with `$ ` - you won't n
 
 
 ### Developers
-- Mary
+- Mary Gomez
 - Michael
 - Charles
+
+### Analysts
+- Nick Wong
+- Vaishu
+- Marco
