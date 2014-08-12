@@ -17,4 +17,8 @@ class Taxi
             @x -= 1
         end
     end
+
+    def position?
+        [@x,@y,@orientation]
+    end
 end
