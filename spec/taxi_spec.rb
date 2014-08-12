@@ -10,17 +10,17 @@ describe Taxi do
 
         it "when passed Foo as the orientation" do
             pending
-            taxi = Taxi.new "1,1,Foo"
+            taxi = Taxi.new 1,1,:Foo
         end
 
         it "when passed a negative int as a x value" do
             pending
-            taxi = Taxi.new "-1,1,N"
+            taxi = Taxi.new -1,1,:N
         end
 
         it "when passed a negative int as a y value" do
             pending
-            taxi = Taxi.new "1,-1,N"
+            taxi = Taxi.new 1,-1,:N
         end
 
     end
