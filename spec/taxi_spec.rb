@@ -2,9 +2,11 @@ require 'taxi'
 
 describe Taxi do
 
-    # Constructor
+    ###########################
+    ####### Constructor #######
+    ###########################
 
-    context "it does not create an object when passed invalid params" do
+    context "it does not create an object when passed invalid params to the constructor" do
 
         it "when passed Foo as the orientation" do
             pending
@@ -24,6 +26,9 @@ describe Taxi do
     end
 
 
+    ###########################
+    ###### Moving forward #####
+    ###########################
 
     context "at position 1,1,N" do
 
