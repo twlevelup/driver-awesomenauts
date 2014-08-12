@@ -8,21 +8,17 @@ describe Taxi do
 
     context "it does not create an object when passed invalid params to the constructor" do
 
-        it "when passed Foo as the orientation" do
-            pending
+        xit "when passed Foo as the orientation" do
             taxi = Taxi.new 1,1,:Foo
         end
 
-        it "when passed a negative int as a x value" do
-            pending
+        xit "when passed a negative int as a x value" do
             taxi = Taxi.new -1,1,:N
         end
 
-        it "when passed a negative int as a y value" do
-            pending
+        xit "when passed a negative int as a y value" do
             taxi = Taxi.new 1,-1,:N
         end
-
     end
 
 
