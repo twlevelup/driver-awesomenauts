@@ -1,19 +1,20 @@
 class Taxi
-    attr_reader :position
-
-    def initialize(position)
-        @position = position
+    def initialize(x,y,facing)
+        @x = x
+        @y = y
+        @facing = orientation
     end
 
-    def move
-        y = @position[2].to_i
-        x = @position[0].to_i
-        orientation = @position[4]
+    def move_forward
 
-        if orientation == "N"
-            @position = "#{x},#{y+1},#{orientation}"
-        else orientation == "E"
-            @position = "#{x+1},#{y},#{orientation}"
+        if @facing == "N"
+            @y += 1
+        elsif @facing == "E"
+            @x += 1
+        elsif orientation == "S"
+            @y -= 1
+        elsif @facing == "W"
+            @x -= 1
         end
     end
 end
