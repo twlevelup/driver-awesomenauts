@@ -2,7 +2,7 @@ class Taxi
     def initialize(x,y,facing)
         @x = x
         @y = y
-        @facing = orientation
+        @facing = facing
     end
 
     def move_forward
@@ -11,7 +11,7 @@ class Taxi
             @y += 1
         elsif @facing == "E"
             @x += 1
-        elsif orientation == "S"
+        elsif @facing == "S"
             @y -= 1
         elsif @facing == "W"
             @x -= 1
