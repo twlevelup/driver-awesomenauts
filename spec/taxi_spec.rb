@@ -35,28 +35,28 @@ describe Taxi do
         it 'should be at the start position we create it at' do
 
             # act
-            taxi_location = @taxi.position
+            location = @taxi.position?
 
             # assert
-            expect(taxi_location).to eql(start_position)
+            expect(location).to eql([1,1,:N])
         end
 
         it 'should be at the end position after it moves' do
 
             # act
-            taxi.move_forward
+            @taxi.move_forward
 
             # assert
-            expect(taxi.position).to eql([1,2,:N])
+            expect(@taxi.position?).to eql([1,2,:N])
         end
 
         it 'should be at (1,3,N) after 2 moves' do
             # act
-            taxi.move_forward
-            taxi.move_forward
+            @taxi.move_forward
+            @taxi.move_forward
 
             # assert
-            expect(taxi.position).to eql([1,3,N])
+            expect(@taxi.position?).to eql([1,3,N])
         end
 
     end
@@ -73,7 +73,7 @@ describe Taxi do
             @taxi.move_forward
 
             # assert
-            expect(taxi.position).to eql([2,1,:E])
+            expect(taxi.position?).to eql([2,1,:E])
         end
 
         it 'should be at (3,1,E) after two moves' do
@@ -83,7 +83,7 @@ describe Taxi do
             @taxi.move_forward
 
             # assert
-            expect(@taxi.position).to eql([3,1,:E])
+            expect(@taxi.position?).to eql([3,1,:E])
         end
     end
 end
