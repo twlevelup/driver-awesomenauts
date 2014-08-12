@@ -8,12 +8,12 @@ class Taxi
     def move
         y = @position[2].to_i
         x = @position[0].to_i
-        facing = @position[4]
+        orientation = @position[4]
 
-        if facing == "N"
-            @position = "#{x},#{y+1},#{facing}"
-        else facing == "E"
-            @position = "#{x+1},#{y},#{facing}"
+        if orientation == "N"
+            @position = "#{x},#{y+1},#{orientation}"
+        else orientation == "E"
+            @position = "#{x+1},#{y},#{orientation}"
         end
     end
 end
