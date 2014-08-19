@@ -1,5 +1,6 @@
 class Taxi
-
+    @@orientations = [:N, :W, :S, :E]
+    
     def initialize(x,y,facing)
         @x, @y, @facing = x, y, facing
     end
@@ -18,10 +19,9 @@ class Taxi
     end
 
     def turn_left
-      orientations = [:N, :W, :S, :E]
-      len = orientations.length
-      orientation_index = orientations.index(@facing)
-      @facing = orientations[(orientation_index + 1) % len]
+      len = @@orientations.length
+      orientation_index = @@orientations.index(@facing)
+      @facing = @@orientations[(orientation_index + 1) % len]
     end
 
 
