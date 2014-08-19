@@ -69,4 +69,49 @@ describe Taxi do
             expect(@taxi.position).to eql([3,1,:E])
         end
     end
+
+    describe 'turn right' do
+        it 'turn right from West to North' do
+            taxi = Taxi.new 1,1,:W
+            taxi.turn_right
+            facing = taxi.position[2]
+            expect(facing).to eq(:N)
+        end
+
+        it 'turn right from North to East' do
+            taxi = Taxi.new 1,1,:N
+            taxi.turn_right
+            facing = taxi.position[2]
+            expect(facing).to eq(:E)
+        end
+
+        it 'turn right from East to South' do
+            taxi = Taxi.new 1,1,:E
+            taxi.turn_right
+            facing = taxi.position[2]
+            expect(facing).to eq(:S)
+        end
+
+        it 'turn right from South to West' do
+            taxi = Taxi.new 1,1,:S
+            taxi.turn_right
+            facing = taxi.position[2]
+            expect(facing).to eq(:W)
+        end
+
+        it 'turn right twice from West to East' do
+            taxi = Taxi.new 1,1,:W
+            taxi.turn_right
+            taxi.turn_right
+            facing = taxi.position[2]
+            expect(facing).to eq(:E)
+        end
+
+         it 'turn right should return the new facing' do
+            taxi = Taxi.new 1,1,:W
+            facing = taxi.turn_right
+            expect(facing).to eq(:N)
+        end
+        
+    end
 end
