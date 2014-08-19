@@ -1,9 +1,7 @@
 class Taxi
 
     def initialize(x,y,facing)
-        @x = x
-        @y = y
-        @facing = facing
+        @x, @y, @facing = x, y, facing
     end
 
     def move_forward
@@ -16,9 +14,10 @@ class Taxi
         elsif @facing == :W
             @x -= 1
         end
+        [@x, @y, @facing]
     end
 
-    def position?
+    def position
         [@x,@y,@facing]
     end
 end
