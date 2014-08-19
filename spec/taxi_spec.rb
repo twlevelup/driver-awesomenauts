@@ -1,7 +1,7 @@
 require 'taxi'
 
 describe Taxi do
-    
+
     context "at position 1,1,N" do
         before :each do
             @taxi = Taxi.new(1,1,:N)
@@ -112,6 +112,58 @@ describe Taxi do
             facing = taxi.turn_right
             expect(facing).to eq(:N)
         end
-        
+
+    end
+
+    context "turning left" do
+
+        it "when facing north it should face west when it turns left" do
+            #arrange
+            @taxi = Taxi.new 1, 1, :N
+
+            #act
+            @taxi.turn_left
+            position = @taxi.position
+            facing = position[2]
+
+            #assert
+            expect(facing).to eql(:W)
+        end
+
+        it "when facing west it should face south when it turns left" do
+            #arrange
+            @taxi = Taxi.new 1, 1, :W
+            #act
+            @taxi.turn_left
+            position = @taxi.position
+            facing = position[2]
+
+            #assert
+            expect(facing).to eql(:S)
+        end
+
+        it "when facing south it should face east when it turns left" do
+            #arrange
+            @taxi = Taxi.new 1, 1, :S
+            #act
+            @taxi.turn_left
+            position = @taxi.position
+            facing = position[2]
+
+            #assert
+            expect(facing).to eql(:E)
+        end
+
+        it "when facing east it should face north when it turns left" do
+            #arrange
+            @taxi = Taxi.new 1, 1, :E
+            #act
+            @taxi.turn_left
+            position = @taxi.position
+            facing = position[2]
+
+            #assert
+            expect(facing).to eql(:N)
+        end
     end
 end

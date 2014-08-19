@@ -17,6 +17,19 @@ class Taxi
         [@x, @y, @facing]
     end
 
+    def turn_left
+      #orientations = [:N, :W, :S, :E]
+      if @facing == :N
+        @facing = :W
+      elsif @facing == :W
+        @facing = :S
+      elsif @facing == :S
+        @facing = :E
+      elsif @facing == :E
+        @facing = :N
+      end
+    end
+
     def position
         [@x,@y,@facing]
     end
