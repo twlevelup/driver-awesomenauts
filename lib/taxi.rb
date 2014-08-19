@@ -18,17 +18,12 @@ class Taxi
     end
 
     def turn_left
-      #orientations = [:N, :W, :S, :E]
-      if @facing == :N
-        @facing = :W
-      elsif @facing == :W
-        @facing = :S
-      elsif @facing == :S
-        @facing = :E
-      elsif @facing == :E
-        @facing = :N
-      end
+      orientations = [:N, :W, :S, :E]
+      len = orientations.length
+      orientation_index = orientations.index(@facing)
+      @facing = orientations[(orientation_index + 1) % len]
     end
+
 
     def position
         [@x,@y,@facing]
