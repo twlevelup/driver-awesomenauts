@@ -46,5 +46,9 @@ class Taxi
       end
     end
 
+	
+	def stop
+		"Location:"+ position.join(",") + " - " + "Status:Stopped"
+	end
 
 end
