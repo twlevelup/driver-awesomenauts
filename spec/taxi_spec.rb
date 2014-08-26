@@ -176,4 +176,30 @@ describe Taxi do
         end
     end
     
+    describe "reversing" do
+        it "should reverse from north" do
+            taxi = Taxi.new 1, 1, :N
+            taxi.reverse
+            position = taxi.position
+            expect(taxi.position).to eql([1,0,:N])
+        end
+        it "should reverse from south" do
+            taxi = Taxi.new 1, 1, :S
+            taxi.reverse
+            position = taxi.position
+            expect(taxi.position).to eql([1,2,:S])
+        end 
+        it "should reverse from west" do
+            taxi = Taxi.new 1, 1, :W
+            taxi.reverse
+            position = taxi.position
+            expect(taxi.position).to eql([2,1,:W])
+        end
+        it "should reverse from east" do
+            taxi = Taxi.new 1, 1, :E
+            taxi.reverse
+            position = taxi.position
+            expect(taxi.position).to eql([0,1,:E])
+        end
+    end
 end

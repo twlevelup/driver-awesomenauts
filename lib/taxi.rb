@@ -34,4 +34,17 @@ class Taxi
         [@x,@y,@facing]
     end
 
+    def reverse
+      if @facing == :N
+        @y -= 1     
+      elsif @facing == :S 
+        @y += 1
+      elsif @facing == :W
+        @x += 1
+      elsif @facing == :E
+        @x -= 1 
+      end
+    end
+
+
 end
