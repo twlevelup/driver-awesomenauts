@@ -1,6 +1,14 @@
 require 'taxi'
 
 describe Taxi do
+	
+	describe 'current taxi location' do
+    	it "should return the taxi's location" do
+    		taxi = Taxi.new 1,1,:W
+    		position = taxi.position
+    		expect(position).to eql([1,1,:W])
+    	end
+    end
 
     context "at position 1,1,N" do
         before :each do
@@ -166,4 +174,5 @@ describe Taxi do
             expect(facing).to eql(:N)
         end
     end
+    
 end
