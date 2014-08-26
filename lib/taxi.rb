@@ -44,6 +44,7 @@ class Taxi
       elsif @facing == :E
         @x -= 1 
       end
+      position
     end
 
 	
