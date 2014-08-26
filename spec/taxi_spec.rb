@@ -124,15 +124,17 @@ describe Taxi do
 
     end
 
-    context "turning left" do
-
+    describe "turning left" do
+		
+		let (:taxi) { Taxi.new(1,1,:W)}
+		
         it "when facing north it should face west when it turns left" do
             #arrange
-            @taxi = Taxi.new 1, 1, :N
+            taxi = Taxi.new 1, 1, :N
 
             #act
-            @taxi.turn_left
-            position = @taxi.position
+            taxi.turn_left
+            position = taxi.position
             facing = position[2]
 
             #assert
@@ -141,10 +143,10 @@ describe Taxi do
 
         it "when facing west it should face south when it turns left" do
             #arrange
-            @taxi = Taxi.new 1, 1, :W
+            taxi = Taxi.new 1, 1, :W
             #act
-            @taxi.turn_left
-            position = @taxi.position
+            taxi.turn_left
+            position = taxi.position
             facing = position[2]
 
             #assert
@@ -153,10 +155,10 @@ describe Taxi do
 
         it "when facing south it should face east when it turns left" do
             #arrange
-            @taxi = Taxi.new 1, 1, :S
+            taxi = Taxi.new 1, 1, :S
             #act
-            @taxi.turn_left
-            position = @taxi.position
+            taxi.turn_left
+            position = taxi.position
             facing = position[2]
 
             #assert
@@ -165,10 +167,10 @@ describe Taxi do
 
         it "when facing east it should face north when it turns left" do
             #arrange
-            @taxi = Taxi.new 1, 1, :E
+            taxi = Taxi.new 1, 1, :E
             #act
-            @taxi.turn_left
-            position = @taxi.position
+            taxi.turn_left
+            position = taxi.position
             facing = position[2]
 
             #assert
