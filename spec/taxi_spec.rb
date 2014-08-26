@@ -226,5 +226,10 @@ describe Taxi do
     		taxi.turn_right
     		expect(taxi.stop).to eql("Location:1,1,N - Status:Stopped")
     	end
+    	
+    	it 'should return location,orientation and status when taxi stop after reverse t' do
+    		taxi.reverse
+    		expect(taxi.stop).to eql("Location:2,1,W - Status:Stopped")
+    	end
     end
 end
