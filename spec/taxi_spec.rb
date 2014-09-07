@@ -203,36 +203,37 @@ describe Taxi do
 	end
 	
     describe 'taxi stop' do
-    	let (:taxi) {Taxi.new(1,1,:W)} 
-    	
-    	it 'should return location,orientation and status when taxi stop' do
-    		expect(taxi.stop).to eql("Location:1,1,W - Status:Stopped")
-    	end
-    	
-    	it 'should return location,orientation and status when taxi stop after moving forward' do
-    		taxi.move_forward
-    		expect(taxi.stop).to eql("Location:0,1,W - Status:Stopped")
-    	end
-    	
-    	it 'should return location,orientation and status when taxi stop after turn left' do
-    		taxi.turn_left
-    		expect(taxi.stop).to eql("Location:1,1,S - Status:Stopped")
-    	end
-    	
-    	it 'should return location,orientation and status when taxi stop after turn right' do
-    		taxi.turn_right
-    		expect(taxi.stop).to eql("Location:1,1,N - Status:Stopped")
-    	end
-    	
-    	it 'should return location,orientation and status when taxi stop after reverse t' do
-    		taxi.reverse
-    		expect(taxi.stop).to eql("Location:2,1,W - Status:Stopped")
-    	end
-        
-        it 'should return the new position' do
-            taxi = Taxi.new 1, 1, :E
-            position = taxi.reverse
-            expect(position).to eql([0,1,:E])
-        end
-    end
+         	
+        let (:taxi) {Taxi.new(1,1,:W)} 
+     	
+     	it 'should return location,orientation and status when taxi stop' do
+     		expect(taxi.stop).to eql("1,1,W")
+     	end
+     	
+     	it 'should return location,orientation and status when taxi stop after moving forward' do
+     		taxi.move_forward
+     		expect(taxi.stop).to eql("0,1,W")
+     	end
+     	
+     	it 'should return location,orientation and status when taxi stop after turn left' do
+     		taxi.turn_left
+     		expect(taxi.stop).to eql("1,1,S")
+     	end
+     	
+     	it 'should return location,orientation and status when taxi stop after turn right' do
+     		taxi.turn_right
+     		expect(taxi.stop).to eql("1,1,N")
+     	end
+     	
+     	it 'should return location,orientation and status when taxi stop after reverse t' do
+     		taxi.reverse
+     		expect(taxi.stop).to eql("2,1,W")
+     	end
+         
+         it 'should return the new position' do
+             taxi = Taxi.new 1, 1, :E
+             position = taxi.reverse
+             expect(position).to eql([0,1,:E])
+         end
+     end
 end
