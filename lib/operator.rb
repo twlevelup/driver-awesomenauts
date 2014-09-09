@@ -1,4 +1,16 @@
 class Operator
+
+	def initialize
+		location = parse_location
+		commands = parse_commands
+		
+		@x = location[0]
+		@y = location[1]
+		@facing = location[2]
+
+		@taxi = Taxi.new @x, @y, @facing
+		command_handler!(commands)
+	end
 	
 	def command_handler(taxi,command_string)
 
