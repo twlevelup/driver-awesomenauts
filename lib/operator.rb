@@ -1,10 +1,16 @@
 class Operator
 	
-	def command_handler(taxi,command)
+	def command_handler(taxi,command_string)
 
-		i=0;
-		begin
-			case command[i]
+		command_string.each_char {|c| excecute_command(taxi, c)}
+		
+		return taxi.stop
+	end
+
+	private
+
+	def excecute_command(taxi,command)
+		case command
 			when 'F'
 				taxi.move_forward
 			when 'L'
@@ -13,12 +19,6 @@ class Operator
 				taxi.turn_right
 			when 'B'
 				taxi.reverse
-			end
-			i = i + 1 
-		end while i <= command.length
-		
-	
-		
-		
+			end	
 	end
 end
