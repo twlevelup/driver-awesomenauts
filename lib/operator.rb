@@ -19,6 +19,17 @@ class Operator
 				taxi.turn_right
 			when 'B'
 				taxi.reverse
-			end	
+			end
+			i = i + 1 
+		end while i <= command.length
+		
+	end
+
+	def parse_location
+		coordinates = ARGV[0].split(',')
+		x = coordinates[0].to_i
+		y = coordinates[1].to_i
+		facing = coordinates[2].to_sym
+		[x, y, facing]
 	end
 end
