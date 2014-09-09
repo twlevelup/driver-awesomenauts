@@ -22,7 +22,6 @@ class Operator
 			end
 			i = i + 1 
 		end while i <= command.length
-		
 	end
 
 	def parse_location
@@ -31,5 +30,9 @@ class Operator
 		y = coordinates[1].to_i
 		facing = coordinates[2].to_sym
 		[x, y, facing]
+	end
+
+	def parse_commands
+		commands = ARGV[1].split("")
 	end
 end
