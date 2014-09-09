@@ -1,3 +1,5 @@
+require_relative 'taxi'
+
 class Operator
 
 	#def initialize
@@ -36,13 +38,13 @@ class Operator
 	def excecute_command(taxi,command)
 		case command
 			when 'F'
-				taxi.move_forward
+				@taxi.move_forward
 			when 'L'
-				taxi.turn_left
+				@taxi.turn_left
 			when 'R'
-				taxi.turn_right
+				@taxi.turn_right
 			when 'B'
-				taxi.reverse
+				@taxi.reverse
 			end
 		
 	end
