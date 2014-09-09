@@ -73,4 +73,17 @@ describe Operator do
             expect(taxi.stop).to eql("2,2,N")
         end
 	end
+
+    describe 'parse_location' do
+        it "assigns and returns the location parameters entered in the command line" do
+            # Arrange
+            handler = Operator.new
+
+            # Act  
+            taxi = handler.create_taxi '1,2,N'  
+
+            # Assert
+            expect(taxi.position).to eql([1,2,:N])
+        end
+    end
 end

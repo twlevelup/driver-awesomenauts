@@ -21,16 +21,17 @@ class Operator
 		return taxi.stop
 	end
 
-	def parse_location
-		coordinates = ARGV[0].split(',')
+	def create_taxi(location)
+		coordinates = location.split(',')
 		x = coordinates[0].to_i
 		y = coordinates[1].to_i
 		facing = coordinates[2].to_sym
-		[x, y, facing]
+		Taxi.new x, y, facing
 	end
 
-	def parse_commands
-		commands = ARGV[1].split("")
+	def print_results(location)
+		puts "Taxi started at: [#{@x}, #{@y}, :#{@facing}]"
+		puts "It's now at: #{@taxi.position}!"
 	end
 
 	private
@@ -38,14 +39,15 @@ class Operator
 	def excecute_command(taxi,command)
 		case command
 			when 'F'
-				@taxi.move_forward
+				taxi.move_forward
 			when 'L'
-				@taxi.turn_left
+				taxi.turn_left
 			when 'R'
-				@taxi.turn_right
+				taxi.turn_right
 			when 'B'
-				@taxi.reverse
+				taxi.reverse
 			end
-		
 	end
+
 end
+
