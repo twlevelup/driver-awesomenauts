@@ -53,15 +53,12 @@ class Operator
 
 		while taxi.position[0].to_i != destination_x
 			taxi.move_forward
-			puts "Taxi position: #{taxi.position}"
 		end
 
 		taxi.face_y
 		while taxi.position[1].to_i != destination_y
 			taxi.move_forward
-			puts "Taxi position: #{taxi.position}"
 		end
-		puts "At destination"
 	end	
 
 

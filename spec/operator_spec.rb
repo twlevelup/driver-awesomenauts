@@ -87,6 +87,7 @@ describe Operator do
         end
     end
 
+
     describe 'validation' do
         it "if x >8 should return false" do
             handler = Operator.new
@@ -111,6 +112,22 @@ describe Operator do
         it "if all good should return true" do
             handler = Operator.new
             expect(handler.coordinate_isvalid(2,1)).to eql(true)
+        end
+    end
+
+
+    describe "Moving east" do
+
+        it "moves East once when the destination is East from the taxi" do
+            # Arrange
+            handler = Operator.new
+            taxi = handler.create_taxi '1,1,N'
+            handler.give_destination taxi,4,4
+            # Act
+            handler.progress_all_taxis(taxi)
+
+            # Assert
+            expect(taxi.position).to eql([4,4,:N])
         end
 
     end
