@@ -116,9 +116,9 @@ describe Operator do
     end
 
 
-    describe "Moving east" do
+    describe "Travelling to a destination" do
 
-        it "moves East once when the destination is East from the taxi" do
+        it "moves to the destination when it is to the East and North" do
             # Arrange
             handler = Operator.new
             taxi = handler.create_taxi '1,1,N'
@@ -128,6 +128,19 @@ describe Operator do
 
             # Assert
             expect(taxi.position).to eql([4,4,:N])
+        end
+
+        it "moves to the destination when it is to the West and South" do
+            # Arrange
+            handler = Operator.new
+            taxi = handler.create_taxi '4,4,N'
+            handler.give_destination taxi,2,2
+
+            # Act
+            handler.progress_all_taxis(taxi)
+
+            # Assert
+            expect(taxi.position).to eql([2,2,:S])
         end
 
     end
