@@ -42,7 +42,11 @@ class Operator
 
 
 	def give_destination(taxi,x,y)
-		taxi.set_destination(x,y)
+		if coordinate_isvalid(x, y)
+			taxi.set_destination(x,y)
+		else
+			puts "Invalid coordinates"
+		end
 	end
 
 	def progress_all_taxis(taxi)
@@ -76,7 +80,5 @@ class Operator
 				taxi.reverse
 			end
 	end
-
-	
 end
 
