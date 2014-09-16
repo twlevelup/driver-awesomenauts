@@ -3,6 +3,15 @@ class Taxi
     
     def initialize(x,y,facing)
         @x, @y, @facing = x, y, facing
+        @destination_x, @destination_y = x,y
+    end
+
+    def set_destination(x, y)
+      @destination_x, @destination_y = x, y
+    end
+
+    def get_destination
+      [@destination_x,@destination_y]
     end
 
     def move_forward
@@ -47,6 +56,32 @@ class Taxi
       position
     end
 
+    def face_x
+      # Set up direction to move
+      if @x < @destination_x
+        rotate(:E)
+      elsif @x > @destination_x
+        rotate(:W)
+      else
+        puts "nothing"
+      end
+    end
+
+    def face_y
+      if @y < @destination_y
+        rotate(:N)
+      elsif @y > @destination_y
+        rotate(:S)
+      else
+        puts "nothing"
+      end
+    end
+
+    def rotate(direction)
+      while @facing != direction
+        turn_right
+      end
+    end
 	
 	def stop
 		position.join(',')
