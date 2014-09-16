@@ -86,4 +86,32 @@ describe Operator do
             expect(taxi.position).to eql([1,2,:N])
         end
     end
+
+    describe 'validation' do
+        it "if x >8 should return false" do
+            handler = Operator.new
+            expect(handler.coordinate_isvalid(9,0)).to eql(false)
+        end
+
+        it "if x <0 should return false" do
+            handler = Operator.new
+            expect(handler.coordinate_isvalid(-1,0)).to eql(false)
+        end
+
+        it "if y >4 should return false" do
+            handler = Operator.new
+            expect(handler.coordinate_isvalid(0,5)).to eql(false)
+        end
+
+        it "if y <0 should return false" do
+            handler = Operator.new
+            expect(handler.coordinate_isvalid(0,-1)).to eql(false)
+        end
+
+        it "if all good should return true" do
+            handler = Operator.new
+            expect(handler.coordinate_isvalid(2,1)).to eql(true)
+        end
+
+    end
 end

@@ -34,6 +34,11 @@ class Operator
 		puts "It's now at: #{@taxi.position}!"
 	end
 
+	def coordinate_isvalid(x,y)
+		grid = Grid.new
+		(x>=grid.x_min && x<=grid.x_max && y>=grid.y_min && y<=grid.y_max)
+	end
+
 	private
 
 	def excecute_command(taxi,command)
@@ -49,5 +54,6 @@ class Operator
 			end
 	end
 
+	
 end
 
