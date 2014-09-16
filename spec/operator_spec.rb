@@ -143,5 +143,28 @@ describe Operator do
             expect(taxi.position).to eql([2,2,:S])
         end
 
+        it "moves to the destination when it is directly to the South" do
+            handler = Operator.new
+            taxi = handler.create_taxi '4,4,N'
+            handler.give_destination taxi,4,2
+
+            # Act
+            handler.progress_all_taxis(taxi)
+
+            # Assert
+            expect(taxi.position).to eql([4,2,:S])
+        end
+
+        it "moves to the destination when it is directly to the North" do
+            handler = Operator.new
+            taxi = handler.create_taxi '4,2,N'
+            handler.give_destination taxi,4,4
+
+            # Act
+            handler.progress_all_taxis(taxi)
+
+            # Assert
+            expect(taxi.position).to eql([4,4,:N])
+        end
     end
 end
