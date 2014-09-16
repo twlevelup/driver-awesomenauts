@@ -34,10 +34,36 @@ class Operator
 		puts "It's now at: #{@taxi.position}!"
 	end
 
+
 	def coordinate_isvalid(x,y)
 		grid = Grid.new
 		(x>=grid.x_min && x<=grid.x_max && y>=grid.y_min && y<=grid.y_max)
 	end
+
+
+	def give_destination(taxi,x,y)
+		taxi.set_destination(x,y)
+	end
+
+	def progress_all_taxis(taxi)
+		destination_x = taxi.get_destination[0].to_i
+		destination_y = taxi.get_destination[1].to_i
+
+		taxi.face_x
+
+		while taxi.position[0].to_i != destination_x
+			taxi.move_forward
+			puts "Taxi position: #{taxi.position}"
+		end
+
+		taxi.face_y
+		while taxi.position[1].to_i != destination_y
+			taxi.move_forward
+			puts "Taxi position: #{taxi.position}"
+		end
+		puts "At destination"
+	end	
+
 
 	private
 
