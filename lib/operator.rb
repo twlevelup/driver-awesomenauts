@@ -2,18 +2,6 @@ require_relative 'taxi'
 
 class Operator
 
-	#def initialize
-	#	location = parse_location
-	#	commands = parse_commands
-	#	
-	#	@x = location[0]
-	#	@y = location[1]
-	#	@facing = location[2]
-	#
-	#	@taxi = Taxi.new @x, @y, @facing
-	#	command_handler(@taxi, commands)
-	#end
-
 	def command_handler(taxi,command_string)
 
 		command_string.each_char {|c| excecute_command(taxi, c)}
@@ -64,7 +52,6 @@ class Operator
 			taxi.move_forward
 		end
 	end	
-
 
 	private
 
