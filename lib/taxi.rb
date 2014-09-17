@@ -57,13 +57,10 @@ class Taxi
     end
 
     def face_x
-      # Set up direction to move
       if @x < @destination_x
         rotate(:E)
       elsif @x > @destination_x
         rotate(:W)
-      else
-        puts "nothing"
       end
     end
 
@@ -72,8 +69,6 @@ class Taxi
         rotate(:N)
       elsif @y > @destination_y
         rotate(:S)
-      else
-        puts "nothing"
       end
     end
 
