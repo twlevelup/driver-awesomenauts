@@ -5,6 +5,7 @@
 
 Repository for Melb Level Up Driver
 
+[![Build Status](https://snap-ci.com/twlevelup/driver-awesomenauts/branch/master/build_image)](https://snap-ci.com/twlevelup/driver-awesomenauts/branch/master)
 
 ## Setup
 _note: any commands run on the command line are prefixed with `$ ` - you won't need to include the `$ ` when running the command_
