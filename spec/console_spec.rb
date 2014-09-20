@@ -25,8 +25,8 @@ describe Console do
 		input.puts "1,1N"		# Invalid location
 		input.puts "1,23456"	# Invalid location
 		input.puts "1,1,N"		# Valid location
-		input.puts "1,2"
-		input.puts "q"
+		input.puts "1,2"		# Input destination
+		input.puts "q"			# Quit
 		input.rewind
 
 		console.ui 
