@@ -28,10 +28,12 @@ class Console
 		loop do
 			@output.puts "Please enter destination of taxi:"
 			taxi_destination = @input.gets.chomp.split(',')
-			handler(taxi, taxi_location, taxi_destination)	
+			positions = handler(taxi, taxi_location, taxi_destination)
+			@output.puts "Path of the taxi: #{positions}"
 			@output.puts "Current location of taxi: #{taxi.stop}"
 			@output.puts "----Press q to exit----"
 			next_line = @input.gets.chomp
+
 
 			break if (next_line == 'q' || next_line == 'Q')
 		end
