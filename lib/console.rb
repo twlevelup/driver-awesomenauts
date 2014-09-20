@@ -21,8 +21,9 @@ class Console
 	end
 
 	def ui
-		@output.puts "Please enter the location of taxi eg:1,1,N"
-		taxi_location = @input.gets.chomp
+
+		taxi_location = get_location
+
 		taxi = @handler.create_taxi taxi_location
 
 		loop do
@@ -37,6 +38,15 @@ class Console
 
 			break if (next_line == 'q' || next_line == 'Q')
 		end
+	end
+
+	def get_location
+		taxi_location = ''
+		while taxi_location.split(',').length != 3 do
+			@output.puts "Please enter the location of taxi eg:1,1,N"
+			taxi_location = @input.gets.chomp
+		end
+		taxi_location	
 	end
 end
 
