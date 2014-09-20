@@ -17,12 +17,6 @@ class Operator
 		Taxi.new x, y, facing
 	end
 
-	def print_results(location)
-		puts "Taxi started at: [#{@x}, #{@y}, :#{@facing}]"
-		puts "It's now at: #{@taxi.position}!"
-	end
-
-
 	def coordinate_isvalid(x,y)
 		grid = Grid.new
 		(x>=grid.x_min && x<=grid.x_max && y>=grid.y_min && y<=grid.y_max)
@@ -52,6 +46,7 @@ class Operator
 			taxi.move_forward
 		end
 	end	
+
 
 	private
 
