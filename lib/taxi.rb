@@ -24,6 +24,7 @@ class Taxi
         elsif @facing == :W
             @x -= 1
         end
+        puts "Current location of taxi: #{@x},#{@y},#{@facing}"
         [@x, @y, @facing]
     end
 

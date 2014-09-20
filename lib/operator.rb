@@ -9,19 +9,22 @@ class Operator
 		return taxi.stop
 	end
 
-	def create_taxi(location)
-		coordinates = location.split(',')
-		x = coordinates[0].to_i
-		y = coordinates[1].to_i
-		facing = coordinates[2].to_sym
-		Taxi.new x, y, facing
-	end
-
 	def coordinate_isvalid(x,y)
 		grid = Grid.new
 		(x>=grid.x_min && x<=grid.x_max && y>=grid.y_min && y<=grid.y_max)
 	end
 
+	def create_taxi(location)
+		coordinates = location.split(',')
+		x = coordinates[0].to_i
+		y = coordinates[1].to_i
+		facing = coordinates[2].to_sym
+		if coordinate_isvalid(x,y)
+			Taxi.new x, y, facing
+		else 
+			puts "Invalid coordinates"
+		end	
+	end
 
 	def give_destination(taxi,x,y)
 		if coordinate_isvalid(x, y)
