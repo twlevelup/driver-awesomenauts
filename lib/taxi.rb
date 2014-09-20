@@ -24,7 +24,6 @@ class Taxi
         elsif @facing == :W
             @x -= 1
         end
-        puts "Current location of taxi: #{@x},#{@y},#{@facing}"
         [@x, @y, @facing]
     end
 
@@ -62,6 +61,8 @@ class Taxi
         rotate(:E)
       elsif @x > @destination_x
         rotate(:W)
+      else
+        []
       end
     end
 
@@ -70,13 +71,18 @@ class Taxi
         rotate(:N)
       elsif @y > @destination_y
         rotate(:S)
+      else
+        []
       end
     end
 
     def rotate(direction)
+      positions = []
       while @facing != direction
         turn_right
+        positions.push(position)
       end
+      positions
     end
 	
 	def stop
