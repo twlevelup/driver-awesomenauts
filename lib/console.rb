@@ -9,30 +9,36 @@ class Console
 	def initialize(input, output)
 		@input = input
 		@output = output
+		@handler = Operator.new
 	end
 
-def menu
-	@output.puts "Please enter the location of taxi eg:1,1,N"
-	taxi_location = @input.gets.chomp
-	handler = Operator.new
-	handler.create_taxi taxi_location
-end
+	def handler(taxi, location, destination)
+		taxi_location = location
+		taxi_destination = destination
+		x = taxi_destination[0].to_i
+		y = taxi_destination[1].to_i
+		@handler.give_destination taxi, x, y
+		@handler.progress_all_taxis(taxi)
+	end
 
-# handler = Operator.new
-# loop do
-# 	menu
-# 	# Get location
+	def ui
+		@output.puts "Please enter the location of taxi eg:1,1,N"
+		taxi_location = @input.gets.chomp
+		taxi = @handler.create_taxi taxi_location
 
-# 	# Create taxi at location
+		loop do
+			@output.puts "Please enter destination"
+			taxi_destination = @input.gets.chomp.split(',')
+			handler(taxi, taxi_location, taxi_destination)	
+			puts "Current location of taxi: #{taxi.stop}"
+			puts "----Press q to exit----"
+			next_line = @input.gets.chomp
 
-# 	# Get destination
+			break if (next_line == 'q' || next_line == 'Q')
+		end
+	end
 
-# 	# Send to destination
-# 	handler.progress_all_taxis(taxi)
 
-
-# 	break if (input == 'Q' || input == 'q')
-# end
 
 end
 
