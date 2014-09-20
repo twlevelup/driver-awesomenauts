@@ -35,7 +35,6 @@ class Console
 			@output.puts "----Press q to exit----"
 			next_line = @input.gets.chomp
 
-
 			break if (next_line == 'q' || next_line == 'Q')
 		end
 	end
