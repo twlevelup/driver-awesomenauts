@@ -5,7 +5,6 @@ require_relative 'grid'
 
 class Console
 
-
 	def initialize(input, output)
 		@input = input
 		@output = output
@@ -36,8 +35,5 @@ class Console
 			break if (next_line == 'q' || next_line == 'Q')
 		end
 	end
-
-
-
 end
 
