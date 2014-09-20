@@ -35,19 +35,28 @@ class Operator
 	end
 
 	def progress_all_taxis(taxi)
+		positions = [taxi.position]
+
 		destination_x = taxi.get_destination[0].to_i
 		destination_y = taxi.get_destination[1].to_i
 
-		taxi.face_x
+		positions = positions + taxi.face_x
+
 
 		while taxi.position[0].to_i != destination_x
 			taxi.move_forward
+			positions.push(taxi.position)
 		end
 
-		taxi.face_y
+		positions = positions + taxi.face_y
+
+
 		while taxi.position[1].to_i != destination_y
 			taxi.move_forward
+			positions.push(taxi.position)
 		end
+
+		positions
 	end	
 
 
