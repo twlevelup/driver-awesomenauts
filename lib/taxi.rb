@@ -78,9 +78,35 @@ class Taxi
 
     def rotate(direction)
       positions = []
-      while @facing != direction
+      if @facing == :N and direction == :E
         turn_right
         positions.push(position)
+      elsif @facing == :E and direction == :N
+        turn_left
+        positions.push(position)
+      elsif @facing == :N and direction == :W
+        turn_left
+        positions.push(position)
+      elsif @facing == :W and direction == :N
+        turn_right
+        positions.push(position)
+      elsif @facing == :W and direction == :S
+        turn_left
+        positions.push(position)
+      elsif @facing == :S and direction == :W
+        turn_right
+        positions.push(position)
+      elsif @facing == :E and direction == :S
+        turn_right
+        positions.push(position)
+      elsif @facing == :S and direction == :E
+        turn_left
+        positions.push(position)
+      else
+        while @facing != direction
+          turn_right
+          positions.push(position)
+        end
       end
       positions
     end
